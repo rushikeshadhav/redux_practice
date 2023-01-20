@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteItem } from "../actions/action";
+import { deleteItem } from "../redux/reducer";
 
 function YourCart() {
-  const getData = useSelector((state) => state.reducer.cart);
+  const getData = useSelector((state) => state.counter.cart);
   console.log(getData);
 
   const [price, setPrice] = React.useState(0);
@@ -28,7 +28,6 @@ function YourCart() {
 
   return (
     <div>
-      {/* <h1 className="text-3xl">{getData.length}</h1> */}
       {getData.map((item) => {
         return (
           <div className="m-3">

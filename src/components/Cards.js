@@ -1,11 +1,11 @@
 import React from "react";
 import Cardsdata from "./Data";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../actions/action";
+import { addToCart } from "../redux/reducer";
 import YourCart from "./YourCart";
 
 function Cards() {
-  const getData = useSelector((state) => state.reducer.cart);
+  const getData = useSelector((state) => state.counter.cart);
   console.log(getData);
 
   const dispatch = useDispatch();

@@ -6,7 +6,6 @@ import {Routes, Route} from "react-router-dom"
 function App() {
   return (
     <div>
-      {/* <Cards /> */}
       <Routes>
         <Route path="/" element={<Cards />} />
         <Route path="/cart" element={<YourCart />} />
