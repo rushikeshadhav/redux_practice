@@ -1,17 +1,18 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteItem } from "../redux/reducer";
+import { deleteItem, addToCart, decrement } from "../redux/reducer";
 
 function YourCart() {
   const getData = useSelector((state) => state.counter.cart);
-  console.log(getData);
+  // console.log(getData);
 
   const [price, setPrice] = React.useState(0);
-  console.log(price);
   const total = () => {
     let sum = 0;
     getData.map((item) => {
-      return (sum = sum + item.price);
+      return (
+        sum = sum + item.qnty * item.price
+      );
     });
     setPrice(sum);
   };
@@ -25,18 +26,28 @@ function YourCart() {
   const DLT = (id) => {
     dispatch(deleteItem(id))
   }
+  const ADD = (item) => {
+    dispatch(addToCart(item))
+  }
+
+  const DEC = (item) => {
+    dispatch(decrement(item))
+  }
 
   return (
     <div>
       {getData.map((item) => {
         return (
-          <div className="m-3">
+          <div className="m-2 bg-slate-200" key={item.id}>
             <div className="flex text-2xl">
               <div>
                 <h2>{item.rname}</h2>
-                <p>{item.price}</p>
+                <p>₹ {item.price}</p>
+                <p>Quantity: {item.qnty}</p>
               </div>
-              <button onClick={() => DLT(item.id)} className="bg-slate-400 text-white p-1 rounded ml-5">Delete</button>
+              <button className="bg-slate-500 text-white px-4 mx-4 my-6 rounded-xl" onClick={() => DEC(item)}>-</button>
+              <button className="bg-slate-500 text-white px-4 mx-4 my-6 rounded-xl" onClick={() => ADD(item)}>+</button>
+              <button onClick={() => DLT(item.id)} className="bg-slate-400 text-white p-1 my-5 rounded ml-5">Delete</button>
             </div>
           </div>
         );

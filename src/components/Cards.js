@@ -6,12 +6,12 @@ import YourCart from "./YourCart";
 
 function Cards() {
   const getData = useSelector((state) => state.counter.cart);
-  console.log(getData);
+  // console.log(getData);
 
   const dispatch = useDispatch();
 
   const sendData = (e) => {
-    console.log(e);
+    // console.log(e);
     dispatch(addToCart(e));
   };
 
@@ -20,7 +20,7 @@ function Cards() {
       <div>
         {Cardsdata.map((item) => {
           return (
-            <div>
+            <div key={item.id}>
               <h2 className="text-3xl">{item.rname}</h2>
               <img className="w-[300px]" src={item.imgdata} />
               <button
