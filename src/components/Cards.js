@@ -17,7 +17,7 @@ function Cards() {
 
   return (
     <div className="flex mr-20 ml-20 mt-10 justify-around">
-      <div>
+      <div className="grid grid-cols-3 gap-10">
         {Cardsdata.map((item) => {
           return (
             <div key={item.id}>

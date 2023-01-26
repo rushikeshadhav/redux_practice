@@ -38,7 +38,7 @@ function YourCart() {
     <div>
       {getData.map((item) => {
         return (
-          <div className="m-2 bg-slate-200" key={item.id}>
+          <div className="m-2" key={item.id}>
             <div className="flex text-2xl">
               <div>
                 <h2>{item.rname}</h2>
