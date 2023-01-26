@@ -25,7 +25,7 @@ function Cards() {
               <img className="w-[300px]" src={item.imgdata} />
               <button
                 onClick={() => sendData(item)}
-                className="h-[60px] bg-slate-300 rounded-xl w-full"
+                className="h-[60px] bg-slate-300 rounded-xl w-full hover:bg-slate-400"
               >
                 Add to Cart
               </button>

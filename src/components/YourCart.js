@@ -9,6 +9,7 @@ function YourCart() {
   const [price, setPrice] = React.useState(0);
   const total = () => {
     let sum = 0;
+    // console.log(getData[0].price);
     getData.map((item) => {
       return (
         sum = sum + item.qnty * item.price
